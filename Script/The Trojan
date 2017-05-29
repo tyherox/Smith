@@ -1,0 +1,55 @@
+<v> name:EMPTY
+<v> occupation:EMPTY
+<v> Assistant:0
+<v> romance:EMPTY
+<v> sexuality:EMPTY
+
+<v> intelligence:0
+<v> strength:10
+<v> charisma:0
+<v> agility:20
+
+<v> Assistant:80
+
+<v> Kyle:45
+<v> Haren:55
+<v> Yerith:30
+<v> Carson:60
+
+<v> Aria:30
+<v> Stella:45
+<v> Kaelyn:55
+<v> Stella:60
+
+<v> devastator:100
+<b> Back Home World
+<t> A devastator hurls a boulder to you!
+<d> 3: Dash towards cover!
+<r> Dodged
+<o> Run towards cover!
+<r> Hit
+</>
+
+<b> Dodged
+<t> You throw yourself behind a small wall as the boulder crashes with devastating force upon your newfound protection. You catch a quick break as you decide what to do next.
+<o> Attack the Robot.
+<if> &{agility}
+<c> devastator-{strength}
+<else>
+<r> Attack
+<o> Retreat back to your previous fortification.
+<r> Hit
+</>
+
+<b> Hit
+<t> You run as fast as you can but unfortunately don't make it in time. You scream in agony as the boulder lands with crushing force upon your legs, pulverizing your only means of escape.
+<f>
+</>
+
+<b> Attack
+<if> &{agility}
+<t> Devastator takes {strength} damage! It currently has {devastator} health.
+<o> Attack again!.
+<c> devastator-{strength}
+<r> Attack
+</>

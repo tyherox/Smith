@@ -1,0 +1,24 @@
+<start> thatcher
+
+<b> Introduction
+<t>
+(INSTERT EMAIL GRAPHIC) 
+</t>
+
+<o> Michael the Playboy
+<r>
+</o>
+
+<o> Ricardo the Pious
+<r>
+</o>
+
+<o> Benjamin the Politician
+<r>
+</o>
+
+<o> Jeremiah the Artist
+<r>
+</o>
+
+</>

@@ -1,0 +1,594 @@
+<start> showcase
+
+<v> name:EMPTY
+<v> dogname:EMPTY
+
+<v> password:1010
+
+<v> Rubert:0
+<v> Ray:0
+<v> Grace:0
+<v> friend:EMPTY
+
+<v> class:EMPTY
+<v> strength:0
+<v> agility:0
+<v> boss:100
+
+<b> Introduction
+<t>
+What will you demo?
+</t>
+<o> Name setting
+<r> name setting
+</o>
+<o> Dynamic Choices
+<r> dynamic choices
+</o>
+<o> User input mechanisms
+<r> user input mechanisms
+</o>
+<o> Character Relations
+<r> character relations
+</o>
+<o> Boss fights
+<r> boss fights
+</o>
+<o> Randomness
+<r> randomness
+</o>
+<o> Image Drawing
+<r> image drawing
+</o>
+<o> Conditionals
+<r> conditionals
+</o>
+<o> Styling Text
+<r> styling text
+</o>
+</>
+
+<b> name setting
+<t>
+This demo will show user created names to allow readers to connect with the story more deeply and personally.
+
+Choose a name to begin this demo.
+</t>
+<o> Kaiden
+<c> name = Kaiden
+<r> start name demo
+</o>
+<o> Randy
+<c> name = Randy
+<r> start name demo
+</o>
+<o> John
+<c> name = John
+<r> start name demo
+</o>
+</>
+
+<b> start name demo
+<t>
+Hey {name}! I bought you a dog. I thought you should name it!
+</t>
+<o> Doggy
+<c> dogname = Doggy
+<r> the dog
+</o>
+<o> Alex
+<c> dogname = Alex
+<r> the dog
+</o>
+<o> Terra
+<c> dogname = Terra
+<r> the dog
+</o>
+</>
+
+<b> the dog
+<t>
+So {name} and {dogname} huh? Sounds good to me!
+
+You just named yourself and the dog. Run again?
+</t>
+<o> Yes
+<r> name setting
+</o>
+<o> No
+<r> Introduction
+</o>
+</>
+
+<b> dynamic choices
+<t>
+These are dynamic choices; they are only available for a duration of time.
+
+All choices will bring you back to here.
+
+Start the demo to see it in action.
+</t>
+<o> Start demo
+<r> dynamic choices action
+</o>
+<o> Exit demo
+<r> Introduction
+</o>
+</>
+
+<b> dynamic choices action
+<t>
+Dynamic Option Demo
+</t>
+<d> 20: This is a 20 second option.
+<r> dynamic choices
+</d>
+<d> 10: This is a 10 second option.
+<r> dynamic choices
+</d>
+<d> 5: This is a 5 second option.
+<r> dynamic choices
+</d>
+<d> 1: This is a 1 second option.
+<r> dynamic choices
+</d>
+<o> This is a safety option. You should always have a safety option to prevent story stalling.
+<r> dynamic choices
+</o>
+</>
+
+<b> user input mechanisms
+<t>
+These are user choices; they are able to utilize custom input.
+
+Start the demo to see it in action.
+</t>
+<o> Start demo
+<r> start user demo
+</o>
+<o> Exit demo
+<r> Introduction
+</o>
+</>
+
+<b> start user demo
+<t>
+Whats your name?
+</t>
+<u>
+<c> name = <u>
+<r> get user name
+</u>
+</>
+
+<b> get user name
+<t>
+Hey {name}, this is the password: {password}. Input the password!
+</t>
+<u>
+<if> {password} = <u>
+<r> correct password
+</if>
+<else>
+<r> incorrect password
+</else>
+</u>
+</>
+
+<b> correct password
+<t>
+Correct!
+</t>
+<o> Go back
+<r> Introduction
+</o>
+</>
+
+<b> incorrect password
+<t>
+Incorrect!
+</t>
+<o> Try again
+<r> get user name
+</o>
+<o> Go back
+<r> Introduction
+</o>
+</>
+
+<b> character relations
+<t>
+This is a demonstration of character relations.
+</t>
+<o> Start demo
+<r> start character relations demo
+</o>
+<o> Exit demo
+<r> start character relations demo
+</o>
+</>
+
+<b> start character relations demo
+<c> Rubert = 0
+<c> Ray = 0
+<c> Grace = 0
+<t>
+You have a present! Who do you want to give the present to?
+</t>
+<o> Rubert
+<c> Rubert + 1
+<r> second present
+</o>
+<o> Ray
+<c> Ray + 1
+<r> second present
+</o>
+<o> Grace
+<c> Grace + 1
+<r> second present
+</o>
+</>
+
+
+<b> second present
+<t>
+You have a second present! Who do you want to give the present to?
+
+Current relations:
+
+Rubert = {Rubert}
+Ray = {Ray}
+Grace = {Grace}
+</t>
+
+<o> Rubert
+<c> Rubert + 1
+<r> last present
+</o>
+<o> Ray
+<c> Ray + 1
+<r> last present
+</o>
+<o> Grace
+<c> Grace + 1
+<r> last present
+</o>
+</>
+
+<b> last present
+<t>
+You have a third present! Who do you want to give the present to?
+
+Current relations:
+
+Rubert = {Rubert}
+Ray = {Ray}
+Grace = {Grace}
+</t>
+
+<o> Rubert
+<c> Rubert + 1
+<r> relationship conclusion
+</o>
+<o> Ray
+<c> Ray + 1
+<r> relationship conclusion
+</o>
+<o> Grace
+<c> Grace + 1
+<r> relationship conclusion
+</o>
+</>
+
+
+<b> relationship conclusion
+<t>
+Final relations:
+
+Rubert = {Rubert}
+Ray = {Ray}
+Grace = {Grace}
+</t>
+
+<o> Go back.
+<r> Introduction
+</o>
+<o> Try again.
+<r> start character relations demo
+</o>
+</>
+
+<b> boss fights
+<t>
+This is a demonstration of a text based combat system.
+
+In this demo, we will be attacking an entity called "boss" with the objective of getting its health to 0.
+
+You can also additionally run away if need be.
+</t>
+<o> Start demo
+<c> boss = 100
+<r> setup character
+</o>
+<o> Exit demo
+<r> Introduction
+</o>
+</>
+
+<b> setup character
+<t>
+Assassins are quick and accurate, dealing small but consistent damage.
+
+Knights are heavy and punishing, their damage will obliterate enemies with raw strength.
+
+What will you be?
+</t>
+<o> An Assassin!
+<c> agility = 50
+<c> strength = 15
+<c> class = assassin
+<r> boss intro
+</o>
+<o> A Knight!
+<c> agility = 15
+<c> strength = 50
+<c> class = knight
+<r> boss intro
+</o>
+</>
+
+<b> boss intro
+<if> {class} = assassin
+<t>
+You gracefully rush towards the towering boss as he swings his great sword towards you. Easily dodging the blow, you end up behind the boss, piercing between his armor to the discomfort of the boss. He swings his arms against you, throwing you against the wall. The fight has begun...
+</t>
+</if>
+<if> {class} = knight
+<t>
+Dragging your sword against the ground, you charge towards the boss with rage. You swing your blade to meet the 
+boss's, resulting in a deafening clang of metal against metal. Pushing his blade aside, you thrust your blade towards an opening, skimming through a weak spot. The boss bashes you with his shield, throwing you across the room. The fight has begun...
+</t>
+</if>
+<o> fight boss!
+<r> fight boss
+</o>
+<o> run away
+<r> run away
+</o>
+</>
+
+<b> fight boss
+<if> {boss}<0
+<r> beat boss
+</if>
+<if> {boss}=0
+<r> beat boss
+</if>
+<t>
+The boss has {boss} health. What will you do?
+</t>
+<o> Use your strength and thrust your blade
+<if> &{agility}
+<c> boss - {strength}
+<r> hit
+</if>
+<r> miss
+</o>
+<o> use your agility and swing your blade
+<if> &{strength}
+<c> boss - {agility}
+<r> hit
+</if>
+<r> miss
+</o>
+<o> run away
+<r> run away
+</o>
+</>
+
+<b> miss
+<t>
+You miss!
+</t>
+<o> Fight again!
+<r> fight boss
+</o>
+<o> Run away!
+<r> run away
+</o>
+</>
+
+<b> hit
+<t>
+You deal damage!
+</t>
+<o> Fight again!
+<r> fight boss
+</o>
+<o> Run away!
+<r> run away
+</o>
+</>
+
+<b> beat boss
+<t>
+You've done it! The boss collapses from your power gasping for air. You finish him off with a quick blow to the head.
+
+You beat him!
+</t>
+<o> Try again
+<r> boss fights
+</o>
+<o> Go back
+<r> Introduction
+</o>
+</>
+
+<b> run away
+<t>
+He is simply too much for you. You run from the towering hulk of metal, throwing your honor and dignity away.
+
+Game over!
+</t>
+<o> Try again
+<r> boss fights
+</o>
+<o> Go back
+<r> Introduction
+</o>
+</>
+
+<b> randomness
+<t>
+This demo will showcase the random effect of the Rye Engine.
+
+There is a 50 percent chance the ball will miss in this demo.
+
+Start the demo by clicking start.
+</t>
+<o> Start
+<r> start random
+</o>
+<o> Back
+<r> Introduction
+</o>
+</>
+
+<b> start random
+<t>
+"Shoot, shoot!"
+
+You look towards the basket as the clock ticks away.
+
+With only seconds left you jump and release the ball towards the destination, hoping for the best
+</t>
+<o> Watch the ball
+<if> &50
+<r> in
+</if>
+<else>
+<r> miss ball
+</else>
+</o>
+</>
+
+<b> in
+<t>
+The ball goes in! A swish!
+
+Being a time traveler, you can go ahead and shoot again. Whaddya say?
+</t>
+<o> Yes
+<r> start random
+</o>
+<o> No
+<r> Introduction
+</o>
+</>
+
+<b> miss ball
+<t>
+The ball unfortunately bounces away from the hoop. An air ball.
+
+Luckily you're a time traveler, shoot again?
+</t>
+<o> Yes
+<r> start random
+</o>
+<o> No
+<r> Introduction
+</o>
+</>
+
+<b> image drawing
+<t>
+This demo will show the engine's capabilities of displaying and transitioning between images.
+</t>
+<o> First Image
+<i> artwork1.jpg
+<r> image drawing
+</o>
+<o> Second Image
+<i> artwork2.jpg
+<r> image drawing
+</o>
+<o> Third Image
+<i> artwork3.jpg
+<r> image drawing
+</o>
+<o> Back
+<i> EMPTY
+<r> Introduction
+</o>
+</>
+
+<b> alert image change
+<t>
+The image has changed.
+</t>
+<o> Go back
+<r> image drawing
+</o>
+</>
+
+<b> styling text
+<t>
+This demo will show text styling capabilities.
+
+*This sentences is bolded. It is done by using this character "\*". *Like \**this\**.
+
+**This sentences is italicized. It is done by using these characters "\*\*".** Like \*\***this\*\***.
+</t>
+<o> Go back
+<r> Introduction
+</o>
+</>
+
+
+<b> conditionals
+<t>
+Type a number between 5 and 10.
+</t>
+<u>
+<if> <u> < 5
+<r> too small
+</if>
+<elseIf> <u> > 10
+<r> too big
+</elseIf>
+<else>
+<r> correct
+</else>
+</u>
+<o> Go back
+<r> Introduction
+</o>
+</>
+
+<b> too small
+<t>
+Too small
+</t>
+<o>Go back
+<r> conditionals
+</o>
+</>
+
+<b> too big
+<t>
+Too big
+</t>
+<o>Go back
+<r> conditionals
+</o>
+</>
+
+<b> correct
+<t>
+Correct
+</t>
+<o>Go back
+<r> conditionals
+</o>
+</>
+

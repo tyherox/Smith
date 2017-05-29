@@ -1,0 +1,175 @@
+<start> War.
+<v> name:EMPTY
+<v> rank:EMPTY
+<v> weapon:10
+<v> agility:70
+<v> support:30
+<v> squad:5
+<v> enemy:100
+
+<b> battlefield
+<i> artwork1.jpg
+<t>
+*Boom!* The ground before you trembles as debris flies all over you. Dozens of soldiers lie cringing in pain as the commanding officer running towards you.\n\n **Soldier! You! What's your name!**
+</t>
+<o> ...
+<r> choose name
+</o>
+</>
+
+<b> choose name
+<t>
+Your name is...
+</t>
+<o> Williams
+<c> name = Williams
+<r> confirm
+</o>
+<o> Kaiden
+<c> name = Kaiden
+<r> confirm
+</o>
+<u>
+<c> name = <u>
+<c> rank = 0
+<r> confirm
+</u>
+</>
+
+<b> confirm
+<t>
+What? **{name}**!?
+</t>
+<o> Yes Sir!
+<r> intro
+</o>
+<o> No sir, its...
+<r> choose name
+</o>
+</>
+
+<b> intro
+<t>
+We're getting torn up here {name}. We won't last another hour with that mortar bombarding us! Go take it out! *NOW!*
+</t>
+<o> Yes sir!
+<r> strategy
+</o>
+<o> Ignore him and run away.
+<r> run
+</o>
+</>
+
+<b> run
+<t>
+As you run from the soldiers the officer yells "Treason treason! Get back here soldier!". The world goes red as you feel multiple bullets enter your back. you look at the officer as he stares disgustingly at you. "Pathetic" he says, as he pulls the trigger at your head.
+</t>
+<f> Continue
+</>
+
+<b> strategy
+<t>
+"Listen up men!" You gather whats left of you squad. \n\nThings look grim. The mortar is about half a kilometer from the fortification. The shortest route is littered with snipers and machine gun nests but perseverance and a bucket load of luck could make it remotely possible. The downed artillery could be repaired to take care of the problem as well. What will you do?
+</t>
+<o> "We're going straight through the city. Gear up!"
+<r> straight on
+</o>
+<o> "Get those batteries to working condition! We need them online ASAP!
+<r> artillery
+</o>
+</>
+
+<b> straight on
+<t>
+With a last hurrah, your squad briskly scale the short wall into the battlefield. A few of your men are immediately sniped by marksmen. As you dash back and forth from cover you feel the ground rumble ominously. One of your downed privates waves at you as he yells "TANK!".
+</t>
+<d> 3: Drag the private to safety
+<c> weapon-5
+<c> squad+1
+<r> save private
+</d>
+<o> Order your men to evade the tank
+<c> squad-1
+<c> support-10
+<r> Run away from tank
+</o>
+<o> Order your men to destroy the tank
+<r> Fight tank
+</o>
+</>
+
+<b> save private
+<t>
+You quickly drag the private inside a building shortly before the ground he was at is pounded by the tanks machine gun barrage. You reach for your gun but to your annoyance see that you dropped it while dragging the private.
+</t>
+<d> 1.5: Go back for your weapon
+<r> get weapon
+</d>
+<o> Order your men to evade the tank
+<c> enemy + 50
+<c> support -10
+<r> Run away from tank
+</o>
+<o> Order your men to destroy the tank
+<r> Fight tank
+</o>
+</>
+
+<b> get weapon
+<t>
+*BOOM!* The first shot from the whips past your helmet and explodes violently behind you. Diving for your weapon,you quickly crawl back to safety just as the machine gun opens fire. Pressing your back against the wall you yell at your men..
+</t>
+<o> Someone blow that damn tank apart!
+<r> Fight tank
+</o>
+<o> Let our boys deal with them, we got a mission to finish!
+<r> Run away form tank
+</o>
+</>
+
+<b> Run away from tank
+<t>
+You yell at the soldiers to move on. "Forget the tank, thats not our problem!" The squad rushes up towards a narrow, ruined alley to take a break.
+</t>
+<o> ...
+<r> go to alley
+</o>
+</>
+
+<b> Fight tank
+<t>
+The tank treads its way closer to your men, its turret searching for targets hungrily as its machine guns let loose a barrage of bullets.Luckily your squad was equipped with anti-armor armaments. The tank's armor seems thick but you can only wish for the best. You also remember that a batch of c4 were given to you for breaching walls. You could try to destroy the tank with those. But it would be deadly and deprive you of a valuable weapon. What will you do?
+</t>
+<o> Try planting explosives
+<if> &40
+<r> beat tank
+</if>
+<else>
+<r> lost to tank
+</else>
+</o>
+<o> Use the anti-tank weapon
+<r> disable tank
+</o>
+</>
+
+<b> beat tank
+<i> artwork3.jpg
+<t>
+The tank grinds to a halt as its engines burst into flames. The crew desperately attempt to crawl out of their doomed
+ vehicle but disappear in a brilliant explosion consuming the vicinity in heat and rubble. You and your men retreat
+ to a near by alley to plan your next move.
+</t>
+<o> ...
+<r> Fight tank
+</o>
+</>
+
+<b> lost to tank
+<t>
+tank beats you
+</t>
+<o> ...
+<r> Fight tank
+</o>
+</>

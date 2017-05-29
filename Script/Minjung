@@ -1,0 +1,67 @@
+<v> boyfriend:EMPTY
+<v> happiness:0
+<v> anger:0
+<v> sadness:0
+
+<b> intro
+<t> Minjung needs a boyfriend. Who will it be?
+<o> John
+<c> happiness+100
+<c> boyfriend=John
+<r> boyfriend intro
+<o> Alex
+<c> anger+1
+<c> boyfriend=Alex
+<r> boyfriend intro
+<o> Joe
+<c> boyfriend=Joe
+<c>sadness-1
+<r> boyfriend intro
+<o> Kyle
+<c> boyfriend=Kyle
+<c> happiness+1
+<c> anger+1
+<c> sadness+1
+<r> boyfriend intro
+</>
+
+<b> boyfriend intro
+<t> {boyfriend} is your boyfriend! What do you do?
+<o> Hit him
+<r> Hit him
+<o> Break up with him
+<r> Break up with him
+<o> Make love to him
+<r> Make love to him
+<o> Be the moon
+<r> Be the moon
+<r> Be the moon
+<if> happiness>0
+<o> Happily Ever After
+<r> Ending
+</>
+
+<b> Break up with him
+<t> You break up with {boyfriend}. He is angry.
+<f>
+</>
+
+<b> Make love to him
+<t> You make love to {boyfriend}. He is happy.
+<f>
+</>
+
+<b> Be the moon
+<t> {boyfriend} is very confused. He becomes Andy.
+<f>
+</>
+
+<b> Hit him
+<t> You hit {boyfriend}. He is sad.
+<f>
+</>
+
+<b> Ending
+<t> You have a happy ending congrats!
+<f>
+</>

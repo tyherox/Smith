@@ -1,0 +1,92 @@
+<v> Name:EMPTY
+<v> Energy:0
+<v> Fear:0
+
+<b> Introduction
+<t> Hi. What is your name?
+<d> 5:John
+<c> Energy+1
+<c> Name = John
+<r> A
+</d>
+<o> Peter  Peter Peter Peter Peter Peter Peter Peter Peter Peter Peter Peter Peter Peter Peter Peter Peter Peter Peter Peter Peter Peter Peter
+<c> Energy-1
+<c> Name = Peter
+<r> B
+</o>
+<o> Andre
+<c> Energy=2
+<c> Name = Andre
+<r> C
+</o>
+<u>
+<c> Name = <u>
+<r> C
+</u>
+</>
+
+<b> A
+<t> (Energy+1) Hi {Name}, This is block A. And you have died unfortunately.
+<o> Go to last
+<r> Final
+</o>
+</>
+
+<b> B
+<t> (Energy-1) Hi {Name}, This is block B
+<o> Go back to Introduction
+<c> Energy+1
+<r> Introduction
+</o>
+<o> Go to B
+<c> Energy-1
+<r> B
+</o>
+<o> Go to C
+<c> Energy=2
+<r> C
+</o>
+<o> Go to last
+<r> Final
+</o>
+</>
+
+<b> C
+<t> (Energy=2) Hi {Name}, This is block C. And you have died unfortunately.
+<o> Go to last
+<r> Final
+</o>
+</>
+
+<b> Final
+<t> Bye {Name}, it is time for us to part. You have {Energy} energy.
+<if> Energy<0
+<o> Check to see if win
+<c> Energy-1
+<r> Finish
+</if>
+<o> Win the game!
+<c> Energy+1
+<r> Finish
+</o>
+</>
+
+<b> Finish
+<if> Energy>0
+<t> Good job, you have Won the trial
+</if>
+<if> Energy<0
+<t> Good job, you have finished the trial
+</if>
+<o> Check to see if win
+<c> Energy-1
+<r> Finish
+</o>
+<if> Energy>0
+<o> Win the game!
+<c> Energy+1
+<r> Finish
+</o>
+</if>
+</>
+

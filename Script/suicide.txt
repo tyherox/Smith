@@ -1,0 +1,31 @@
+<v> Fear:0
+<v> Anger:0
+<v> Happiness:0
+<v> Safety:0
+<v> Proximity:0
+
+<b> Introduction
+<t> Get away from me! \n\n A brick falls in front of your feet, a bit too close for comfort. Looking up, you see a middle aged man struggling to stand on the buildings ledge. By the looks of it, at least 15 stories. A fatal drop if he jumps. What do you do?
+<o> Address the cops around you and show them your badge. Address the cops around you and show them your badge. Address the cops around you and show them your badge.
+<r> The Cop
+<o> Avoid the crowd and try to make your way inside the building.
+<c> Proximity+1
+<r> The Building
+<o> Take a picture of him and upload it on fakebook.
+<r> The Social Network
+</>
+
+<b> The Cop
+<t> You flash your badge at an officer and return his salute. You ask the officer of the situation. An apparent suicide gone sour. You were all too familiar with situations like this. After a quick briefing you realize that the man has little . He's been up there for 5 hours.
+<f>
+</>
+
+<b> The Building
+<t> You quickly rush inside the building and sigh in relief to find it empty. For now at least. It seems as if most of the people are outside observing the scene. You know that there probably isn't much time as you hear the police outside negotiating with food and water. He must have been up there for at least a few hours. You walk towards the elevator.
+<f>
+</>
+
+<b> The Social Network
+<t> You know the power of social networking. Maybe putting a picture up on fakebook may help contact relevant family members or friends. You quickly draw your brand new smartphone and snap several photos of the man.
+<f>
+</>
